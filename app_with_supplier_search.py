@@ -1665,7 +1665,15 @@ def normalize_daily_log_risks(ai_result):
     S × L × E scores deterministically.
     """
 
-    raw_risks = ai_result.get("risks", [])
+    # Model/provider versions may use different list keys.
+    # Final scores from the model are still ignored.
+    raw_risks = ai_result.get("risks")
+    if raw_risks is None:
+        raw_risks = ai_result.get("findings")
+    if raw_risks is None:
+        raw_risks = ai_result.get("risk_items")
+    if raw_risks is None:
+        raw_risks = ai_result.get("identified_risks", [])
 
     if not isinstance(raw_risks, list):
         raw_risks = []
@@ -1748,6 +1756,92 @@ def normalize_daily_log_risks(ai_result):
         })
 
     return normalized
+
+
+def build_daily_log_safety_fallback(title, description):
+    """Create deterministic risks when AI misses explicit site hazards."""
+    text = f"{title} {description}".lower()
+    chinese = any("\u4e00" <= char <= "\u9fff" for char in text)
+    items = []
+
+    def contains_any(words):
+        return any(word in text for word in words)
+
+    def add(title_zh, title_en, reason_zh, reason_en,
+            suggestion_zh, suggestion_en, severity, likelihood, exposure):
+        calculation = calculate_sle_risk(severity, likelihood, exposure)
+        items.append({
+            "title": title_zh if chinese else title_en,
+            "reason": reason_zh if chinese else reason_en,
+            "suggestion": suggestion_zh if chinese else suggestion_en,
+            **calculation,
+        })
+
+    severe_weather = contains_any([
+        "雷暴", "雷电", "强风", "暴雨", "大风",
+        "thunderstorm", "lightning", "strong wind", "heavy rain",
+    ])
+    lifting = contains_any(["塔吊", "吊装", "起重", "crane", "lifting"])
+    if severe_weather and lifting:
+        add(
+            "恶劣天气下塔吊及吊装作业风险",
+            "Lifting operations during severe weather",
+            "日志明确记录雷暴、强风或强降雨影响塔吊及吊装区域。",
+            "The log reports severe weather affecting crane or lifting operations.",
+            "立即停止塔吊及吊装作业，完成天气与设备安全检查后再复工。",
+            "Stop lifting operations and resume only after weather and equipment checks.",
+            5, 4, 4,
+        )
+
+    standing_water = contains_any([
+        "积水", "水浸", "flooding", "standing water", "waterlogging",
+    ])
+    electricity = contains_any([
+        "配电箱", "临时用电", "电源", "电缆", "漏电",
+        "distribution box", "temporary power", "electrical", "cable",
+    ])
+    if standing_water and electricity:
+        add(
+            "积水区域临时用电风险",
+            "Temporary electrical supply near standing water",
+            "日志记录积水接近临时配电或用电设施。",
+            "The log reports standing water close to temporary electrical equipment.",
+            "切断受影响区域电源，隔离现场并由电工检查确认安全。",
+            "Isolate power and have a qualified electrician inspect the affected area.",
+            5, 4, 3,
+        )
+
+    work_at_height = contains_any([
+        "高空", "高处", "脚手架", "平台", "work at height", "scaffold",
+    ])
+    slippery = contains_any([
+        "湿滑", "打滑", "泥泞", "slippery", "wet surface",
+    ])
+    if work_at_height and slippery:
+        add(
+            "高处作业平台湿滑风险",
+            "Slippery work-at-height platform",
+            "日志明确记录高处作业平台处于湿滑状态。",
+            "The log explicitly reports a slippery work-at-height platform.",
+            "暂停高处作业，清理积水并复查防滑和坠落防护措施。",
+            "Suspend work at height and verify slip and fall protection before resuming.",
+            5, 4, 4,
+        )
+
+    if not items and contains_any([
+        "立即停止", "停止作业", "人员撤离", "危险", "事故", "故障",
+        "stop work", "evacuate", "hazard", "unsafe", "accident", "failure",
+    ]):
+        add(
+            "现场显著风险", "Significant site risk",
+            "日志包含明确的停工、撤离、危险或故障信号。",
+            "The log contains an explicit stop-work, evacuation, hazard, or failure signal.",
+            "保持风险区域停工隔离，由现场负责人复核后再决定复工。",
+            "Keep the affected area isolated until a site manager completes a review.",
+            4, 4, 3,
+        )
+
+    return items
 
 
 # ============================================================
@@ -1941,6 +2035,10 @@ Return only the structured result.
             result
         )
 
+        # Empty AI output must not override explicit hazard evidence.
+        if not risks:
+            risks = build_daily_log_safety_fallback(title, description)
+
         # ----------------------------------------------------
         # Overall Daily Log score
         #
@@ -2032,18 +2130,29 @@ Return only the structured result.
         # Safe fallback
         # ----------------------------------------------------
 
-        return {
-            "level": "LOW",
-            "score": 10,
+        fallback_risks = build_daily_log_safety_fallback(title, description)
 
-            "summary": (
+        if fallback_risks:
+            score = max(item["score"] for item in fallback_risks)
+            level = level_from_score(score)
+            summary = (
+                "AI analysis was unavailable; explicit site hazards were "
+                "classified by the deterministic safety fallback."
+            )
+        else:
+            score = 10
+            level = "LOW"
+            summary = (
                 "AI analysis was temporarily unavailable. "
-                "No automated risk classification was applied."
-            ),
+                "No explicit hazard signal was detected by the safety fallback."
+            )
 
-            "risks": [],
-
-            "risk_count": 0,
+        return {
+            "level": level,
+            "score": score,
+            "summary": summary,
+            "risks": fallback_risks,
+            "risk_count": len(fallback_risks),
 
             "scoring_method":
                 "RiskPilot S × L × E Risk Model",
@@ -2600,8 +2709,11 @@ def get_weather(latitude, longitude):
 
         return data
 
-    except Exception as exc:
-        st.error(f"天气数据获取失败：{exc}")
+    except Exception:
+        # This helper is also called repeatedly by the global project map.
+        # A temporary timeout for one location must not render a global red
+        # error banner. Callers that strictly require weather already show
+        # their own localized unavailable-data message.
         return None
 
 
@@ -7292,7 +7404,12 @@ def project_dashboard_page():
 
                     st.caption(
                         t("dashboard.caption_scoring_method")
-                    )            
+                    )
+
+        # Stop after rendering the Daily Logs module. Without this return,
+        # Streamlit continues into the main dashboard code below and renders
+        # the project home page underneath the logs page.
+        return
 
 
     # ========================================================
