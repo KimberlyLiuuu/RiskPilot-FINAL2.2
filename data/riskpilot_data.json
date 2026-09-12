@@ -1,0 +1,203 @@
+{
+  "version": 2,
+  "projects": {
+    "Nairobi Affordable Housing": {
+      "country": "Kenya",
+      "city": "Nairobi",
+      "type": "Residential Construction",
+      "progress": 53,
+      "risk": "Medium",
+      "workers": 320,
+      "address": "Nairobi, Kenya",
+      "latitude": -1.286389,
+      "longitude": 36.817223,
+      "elevation_m": 1795,
+      "terrain_profile": "Highland / elevated urban terrain",
+      "logs": [
+        {
+          "id": "de4dd26d-7f4d-413e-bd0b-d30741f765d1",
+          "filename": "sample_log.txt",
+          "uploaded_at": "2026-08-14T01:35:34",
+          "content": "项目名称：幸福家园住宅项目\n\n日期：2026-08-11\n\n今日施工情况：\n\n上午没有进行主体结构钢筋绑扎。\n\n原计划今日到场的钢筋材料因供应商运输问题延期2天。\n\n下午出现持续暴雨，混凝土浇筑工作暂停约3小时。\n\n现场有2名施工人员请假，导致部分工序人员不足。\n\n下午塔吊出现故障，维修约30分钟后恢复正常。\n\n今日未发生人员伤亡事故。\n\n监理要求加强材料进场检查。",
+          "analysis": {
+            "summary": "今日钢筋材料延期2天到场，暴雨导致混凝土浇筑暂停3小时，2名工人请假，塔吊故障维修30分钟，无人员伤亡。",
+            "risk_level": "MEDIUM",
+            "risk_reason": "材料延期和天气影响可能造成工期延误，人员不足和塔吊故障增加施工风险，但无安全事故。",
+            "hazards": [
+              "钢筋材料延期",
+              "暴雨影响",
+              "人员不足",
+              "塔吊故障"
+            ],
+            "impacts": [
+              "工期延误",
+              "施工进度受阻",
+              "混凝土浇筑质量风险",
+              "塔吊故障可能引发安全隐患"
+            ],
+            "actions": [
+              "与供应商协调钢筋材料尽快到场",
+              "调整施工计划，优先安排不受天气影响的工序",
+              "调配人员补充劳动力",
+              "对塔吊进行全面检查维护",
+              "加强材料进场检查"
+            ],
+            "progress_percent": 68,
+            "workers_mentioned": 2,
+            "urgent": false,
+            "status": "analyzed"
+          }
+        }
+      ],
+      "baseline_score": 58,
+      "baseline_risk": {
+        "level": "MEDIUM",
+        "score": 58,
+        "risks": {
+          "heavy_rainfall": "MEDIUM",
+          "flooding": "MEDIUM",
+          "landslide": "LOW",
+          "earthquake": "LOW",
+          "extreme_heat": "LOW",
+          "strong_wind": "LOW",
+          "terrain": "MEDIUM"
+        },
+        "risk_chains": [],
+        "impacts": [],
+        "actions": []
+      }
+    },
+    "Nairobi Infrastructure": {
+      "country": "Kenya",
+      "city": "Nairobi",
+      "type": "Infrastructure",
+      "progress": 52,
+      "risk": "Low",
+      "workers": 180,
+      "address": "Nairobi, Kenya",
+      "latitude": -1.286389,
+      "longitude": 36.817223,
+      "elevation_m": 1795,
+      "terrain_profile": "Highland / elevated urban terrain",
+      "logs": [],
+      "baseline_score": 38,
+      "baseline_risk": {
+        "level": "LOW",
+        "score": 38,
+        "risks": {},
+        "risk_chains": [],
+        "impacts": [],
+        "actions": []
+      }
+    },
+    "São Paulo Infrastructure": {
+      "country": "Brazil",
+      "city": "São Paulo",
+      "type": "Infrastructure",
+      "progress": 61,
+      "risk": "Medium",
+      "workers": 210,
+      "address": "São Paulo, Brazil",
+      "latitude": -23.55052,
+      "longitude": -46.633308,
+      "elevation_m": 760,
+      "terrain_profile": "Elevated plateau / urban terrain",
+      "logs": [],
+      "baseline_score": 52,
+      "baseline_risk": {
+        "level": "MEDIUM",
+        "score": 52,
+        "risks": {
+          "heavy_rainfall": "MEDIUM",
+          "flooding": "MEDIUM",
+          "landslide": "LOW",
+          "earthquake": "LOW",
+          "extreme_heat": "LOW",
+          "strong_wind": "LOW",
+          "terrain": "MEDIUM"
+        },
+        "risk_chains": [],
+        "impacts": [],
+        "actions": []
+      }
+    },
+    "Brazil Housing Project": {
+      "country": "Brazil",
+      "city": "São Paulo",
+      "type": "Housing Construction",
+      "progress": 44,
+      "risk": "Low",
+      "workers": 150,
+      "address": "São Paulo, Brazil",
+      "latitude": -23.55052,
+      "longitude": -46.633308,
+      "elevation_m": 760,
+      "terrain_profile": "Elevated plateau / urban terrain",
+      "logs": [],
+      "baseline_score": 35,
+      "baseline_risk": {
+        "level": "LOW",
+        "score": 35,
+        "risks": {},
+        "risk_chains": [],
+        "impacts": [],
+        "actions": []
+      }
+    },
+    "Johannesburg Project": {
+      "country": "South Africa",
+      "city": "Johannesburg",
+      "type": "Construction",
+      "progress": 73,
+      "risk": "Medium",
+      "workers": 260,
+      "address": "Johannesburg, South Africa",
+      "latitude": -26.204103,
+      "longitude": 28.047305,
+      "elevation_m": 1753,
+      "terrain_profile": "Highland / elevated urban terrain",
+      "logs": [],
+      "baseline_score": 49,
+      "baseline_risk": {
+        "level": "MEDIUM",
+        "score": 49,
+        "risks": {
+          "heavy_rainfall": "MEDIUM",
+          "flooding": "MEDIUM",
+          "landslide": "MEDIUM",
+          "earthquake": "LOW",
+          "extreme_heat": "LOW",
+          "strong_wind": "LOW",
+          "terrain": "MEDIUM"
+        },
+        "risk_chains": [],
+        "impacts": [],
+        "actions": []
+      }
+    },
+    "Cape Town Housing": {
+      "country": "South Africa",
+      "city": "Cape Town",
+      "type": "Housing",
+      "progress": 38,
+      "risk": "Low",
+      "workers": 140,
+      "address": "Cape Town, South Africa",
+      "latitude": -33.924868,
+      "longitude": 18.424055,
+      "elevation_m": 25,
+      "terrain_profile": "Coastal / low elevation terrain",
+      "logs": [],
+      "baseline_score": 34,
+      "baseline_risk": {
+        "level": "LOW",
+        "score": 34,
+        "risks": {},
+        "risk_chains": [],
+        "impacts": [],
+        "actions": []
+      }
+    }
+  },
+  "updated_at": "2026-08-14T01:36:41"
+}

@@ -1,0 +1,1628 @@
+{
+  "Nairobi Affordable Housing": {
+    "country": "Kenya",
+    "city": "Nairobi",
+    "type": "Residential Construction",
+    "workers": 320,
+    "start_date": "2026-01-10",
+    "end_date": "2027-06-30",
+    "project_scale": "Large",
+    "baseline_score": 58,
+    "baseline_risk": {
+      "score": 58,
+      "level": "MEDIUM",
+      "country": "Kenya",
+      "city": "Nairobi",
+      "project_type": "Residential Construction",
+      "project_scale": "Large",
+      "terrain": "Urban",
+      "drainage": "Moderate",
+      "rainfall": "High",
+      "earthquake": "Low",
+      "risks": {
+        "heavy_rainfall": "MEDIUM",
+        "flooding": "MEDIUM",
+        "landslide": "LOW",
+        "earthquake": "LOW",
+        "extreme_heat": "LOW",
+        "strong_wind": "LOW"
+      },
+      "selected_hazards": {
+        "heavy_rainfall": true,
+        "flooding": true,
+        "landslide": false,
+        "earthquake": false,
+        "extreme_heat": false,
+        "strong_wind": false,
+        "drought": false,
+        "wildfire": false,
+        "other": false
+      },
+      "risk_chains": [
+        "Heavy Rainfall → Increased Surface Runoff → Drainage Pressure → Site Water Accumulation → Safety + Schedule + Quality Risks"
+      ],
+      "impacts": [
+        "Weather-sensitive outdoor work may be interrupted.",
+        "Excavation areas may accumulate water."
+      ],
+      "actions": [
+        "Monitor weather conditions and prepare temporary rain protection.",
+        "Inspect drainage systems and prepare emergency pumping equipment.",
+        "Add identified environmental risks to the project risk register."
+      ]
+    },
+    "daily_logs": [
+      {
+        "date": "2026-08-13",
+        "risk": "Medium",
+        "summary": "Heavy rainfall affected excavation activities.",
+        "workers": 320,
+        "weather": "Rain",
+        "incidents": 0,
+        "notes": "Drainage inspected. No major safety incident.",
+        "log_id": "20260821183834533888",
+        "ai_analysis": {
+          "level": "LOW",
+          "score": 25,
+          "summary": "Imported from an earlier RiskPilot log.",
+          "risks": [],
+          "source": "Migrated"
+        },
+        "severity": "LOW"
+      },
+      {
+        "date": "2026-08-15",
+        "severity": "LOW",
+        "title": "Site Preparation Proceeded Normally",
+        "description": "Site clearing and preparation work proceeded normally. The access road was slightly wet after light morning rain, but there were no major disruptions or safety incidents.",
+        "log_id": "20260821183834533938",
+        "ai_analysis": {
+          "level": "LOW",
+          "score": 25,
+          "summary": "Imported from an earlier RiskPilot log.",
+          "risks": [],
+          "source": "Migrated"
+        }
+      },
+      {
+        "date": "2026-08-15",
+        "severity": "MEDIUM",
+        "title": "Heavy Rain Caused Water Accumulation",
+        "description": "Heavy rainfall during the morning caused water to accumulate near the excavation area. Workers temporarily avoided the affected section while drainage channels were cleared and standing water was removed.",
+        "log_id": "20260821183834533946",
+        "ai_analysis": {
+          "level": "MEDIUM",
+          "score": 55,
+          "summary": "Imported from an earlier RiskPilot log.",
+          "risks": [],
+          "source": "Migrated"
+        }
+      },
+      {
+        "date": "2026-08-15",
+        "severity": "MEDIUM",
+        "title": "Muddy Ground Affected Site Access",
+        "description": "The site remained wet after the previous day's rainfall. Several sections of the access route became muddy, slowing material transportation and increasing the risk of vehicles slipping near the excavation area.",
+        "log_id": "20260821183834533952",
+        "ai_analysis": {
+          "level": "MEDIUM",
+          "score": 55,
+          "summary": "Imported from an earlier RiskPilot log.",
+          "risks": [],
+          "source": "Migrated"
+        }
+      },
+      {
+        "log_id": "20260910114529691495",
+        "date": "2026-09-10",
+        "title": "台风",
+        "description": "建材被淹",
+        "severity": "MEDIUM",
+        "ai_analysis": {
+          "level": "MEDIUM",
+          "score": 65,
+          "summary": "Typhoon conditions caused building materials to be flooded, creating material loss and potential schedule impact. No injuries or equipment failures are stated.",
+          "risks": [
+            {
+              "title": "Flooded building materials",
+              "reason": "The daily log states that building materials were flooded due to a typhoon.",
+              "suggestion": "Inspect all flooded materials for damage, segregate and document unusable items, submit insurance claims, and relocate salvageable materials to elevated dry storage.",
+              "severity": 3,
+              "likelihood": 5,
+              "exposure": 3,
+              "raw_risk": 45,
+              "score": 65,
+              "level": "MEDIUM"
+            },
+            {
+              "title": "Potential schedule delay from material loss",
+              "reason": "Flooded building materials may require replacement, which can interrupt planned construction activities.",
+              "suggestion": "Assess remaining material inventory, expedite replacement orders, and update the construction schedule with contingency activities.",
+              "severity": 3,
+              "likelihood": 4,
+              "exposure": 3,
+              "raw_risk": 36,
+              "score": 57,
+              "level": "MEDIUM"
+            }
+          ],
+          "risk_count": 2,
+          "scoring_method": "RiskPilot S × L × E Risk Model",
+          "formula": "Risk = Severity × Likelihood × Exposure",
+          "score_type": "Relative Risk Index",
+          "source": "AI Risk Extraction + Deterministic Scoring Engine"
+        },
+        "created_at": "2026-09-10T11:45"
+      },
+      {
+        "log_id": "20260911095551167111",
+        "date": "2026-09-11",
+        "title": "The heavy rain led to the failure of the project's commencement",
+        "description": "Plan delayed",
+        "severity": "MEDIUM",
+        "ai_analysis": {
+          "level": "MEDIUM",
+          "score": 65,
+          "summary": "The project commencement was delayed due to heavy rain. No safety, quality, equipment, or cost issues were reported. The only identified risk is a schedule delay caused by adverse weather.",
+          "risks": [
+            {
+              "title": "Schedule delay due to heavy rain",
+              "reason": "The log states that heavy rain led to the failure of the project's commencement, and the plan was delayed.",
+              "suggestion": "Develop a revised schedule with weather contingency allowances, monitor forecasts, and prepare for accelerated work once conditions improve.",
+              "severity": 3,
+              "likelihood": 5,
+              "exposure": 3,
+              "raw_risk": 45,
+              "score": 65,
+              "level": "MEDIUM"
+            }
+          ],
+          "risk_count": 1,
+          "scoring_method": "RiskPilot S × L × E Risk Model",
+          "formula": "Risk = Severity × Likelihood × Exposure",
+          "score_type": "Relative Risk Index",
+          "source": "AI Risk Extraction + Deterministic Scoring Engine",
+          "language": "en"
+        },
+        "created_at": "2026-09-11T09:55",
+        "localized_user_text": {
+          "zh-CN": {
+            "title": "暴雨导致项目开工失败",
+            "description": "计划延迟"
+          }
+        }
+      }
+    ],
+    "address": "Nairobi, Kenya",
+    "risk": "Medium",
+    "starred": false,
+    "pinned": false,
+    "archived": false,
+    "ended_at": null,
+    "current_risk_score": 37,
+    "current_risk_updated_at": "",
+    "localized_content": {
+      "logs": {
+        "20260911095551167111": {
+          "en": {
+            "schema_version": 1,
+            "content_type": "logs",
+            "record_id": "20260911095551167111",
+            "locale": "en",
+            "payload": {
+              "summary": "The project commencement was delayed due to heavy rain. No safety, quality, equipment, or cost issues were reported. The only identified risk is a schedule delay caused by adverse weather.",
+              "risks": [
+                {
+                  "title": "Schedule delay due to heavy rain",
+                  "reason": "The log states that heavy rain led to the failure of the project's commencement, and the plan was delayed.",
+                  "suggestion": "Develop a revised schedule with weather contingency allowances, monitor forecasts, and prepare for accelerated work once conditions improve."
+                }
+              ]
+            },
+            "input_hash": "71caa4f38dc4cd2a77f56081058d181ca99987a8454906da2aca623a5c78beb0",
+            "generated_at": "2026-09-11T01:55:51.167814+00:00",
+            "source": "ai_generated"
+          }
+        }
+      },
+      "current_risk_explanation": {
+        "project": {
+          "zh-CN": {
+            "schema_version": 1,
+            "content_type": "current_risk_explanation",
+            "record_id": "project",
+            "locale": "zh-CN",
+            "payload": {
+              "summary": "当前风险等级为中等，主要因为基线风险本身处于中等水平（58分），且近期现场日志记录的风险评分较高（65分），反映出降雨导致的积水、泥泞和进度延误等问题；虽然天气与财务因素当前未贡献额外风险，但现场实际状况和日志证据将整体风险维持在中等水平。",
+              "risk_level_text": "中等风险",
+              "reasons": [
+                "基线风险为中等（58分），其中强降雨和洪水风险均为中等，构成项目固有风险基础。",
+                "近期日志显示强降雨导致开挖区域附近积水，工人需临时避让并清理排水沟，日志风险评分为55分。",
+                "日志记录雨后场地泥泞，运输车辆在开挖区域附近打滑风险增加，日志风险评分为55分。",
+                "2026年9月10日日志记录台风导致建材被淹，风险评分为65分。",
+                "2026年9月11日日志记录暴雨导致项目开工失败、计划延误，风险评分为65分。",
+                "当前天气数据为空，未提供额外天气风险信息。",
+                "现场条件模型评分为0且置信度为0，未提供有效现场条件评估。"
+              ],
+              "recommendations": [
+                "针对强降雨和洪水风险，检查并加固开挖区域周边的排水系统，确保排水沟畅通。",
+                "针对场地泥泞和车辆打滑风险，在主要运输通道铺设碎石或防滑材料，并限制湿滑条件下的车辆速度。",
+                "针对台风和建材被淹风险，将建材存放于高于地面且防水的区域，并制定台风来临前的物资转移预案。",
+                "针对暴雨导致的开工延误风险，制定雨季施工进度调整方案，预留天气缓冲时间。",
+                "针对日志中反复出现的降雨影响，建立每日天气与现场状况监测机制，及时记录并响应。"
+              ]
+            },
+            "input_hash": "3326466b0850c7497c03a2c6a8d178588579130645c85ffbfb88fddd657a1506",
+            "generated_at": "2026-09-12T11:10:56.456760+00:00",
+            "source": "ai_generated"
+          }
+        }
+      },
+      "vision_analysis": {
+        "vis-f40f0eb934eae99330c96c037fbc0418": {
+          "zh-CN": {
+            "schema_version": 1,
+            "content_type": "vision_analysis",
+            "record_id": "vis-f40f0eb934eae99330c96c037fbc0418",
+            "locale": "zh-CN",
+            "payload": {
+              "summary": "本次检测共发现8项风险，主要集中在人员安全、临边高处、用电安全及现场环境管理方面。其中未佩戴安全帽、临边无防护和临时用电不规范属于高风险问题，需优先整改；未穿反光衣、现场积水和材料堆放混乱为中风险问题，也应尽快处理。",
+              "findings": [
+                {
+                  "finding_id": "vfde0373774fd650",
+                  "title": "人员未佩戴安全帽",
+                  "reason": "现场人员未佩戴安全帽，头部缺乏防护，在施工环境中易受到坠落物或碰撞伤害。",
+                  "recommendation": "立即要求该人员停止作业并正确佩戴安全帽，同时加强现场安全帽佩戴检查。"
+                },
+                {
+                  "finding_id": "vf044e377f374fe9",
+                  "title": "人员未佩戴安全帽",
+                  "reason": "现场人员未佩戴安全帽，头部缺乏防护，在施工环境中易受到坠落物或碰撞伤害。",
+                  "recommendation": "立即要求该人员停止作业并正确佩戴安全帽，同时加强现场安全帽佩戴检查。"
+                },
+                {
+                  "finding_id": "vfa5388cb9fd99f9",
+                  "title": "人员未穿反光衣",
+                  "reason": "现场人员未穿反光衣，在施工区域或机械作业环境中可视性不足，易发生碰撞或碾压事故。",
+                  "recommendation": "立即要求该人员穿戴反光衣，并确保所有现场人员按规定穿着反光衣。"
+                },
+                {
+                  "finding_id": "vf6a9a3c752f30f3",
+                  "title": "人员未穿反光衣",
+                  "reason": "现场人员未穿反光衣，在施工区域或机械作业环境中可视性不足，易发生碰撞或碾压事故。",
+                  "recommendation": "立即要求该人员穿戴反光衣，并确保所有现场人员按规定穿着反光衣。"
+                },
+                {
+                  "finding_id": "vffdfa9102152fcb",
+                  "title": "临边无防护",
+                  "reason": "临边区域缺少防护设施，人员在高处边缘作业或通行时存在坠落风险。",
+                  "recommendation": "立即在临边区域设置防护栏杆或安全网等防护设施，并定期检查其完好性。"
+                },
+                {
+                  "finding_id": "vf248a1d3f802f80",
+                  "title": "现场积水",
+                  "reason": "现场存在积水，可能导致人员滑倒、设备受潮或电气安全隐患，影响施工安全。",
+                  "recommendation": "及时清除现场积水，查明积水原因并采取排水措施，保持作业面干燥。"
+                },
+                {
+                  "finding_id": "vfba79b81bf2d89f",
+                  "title": "临时用电不规范",
+                  "reason": "临时用电不规范，可能存在线路乱拉乱接、绝缘破损或漏电等问题，易引发触电或火灾事故。",
+                  "recommendation": "立即由专业电工对临时用电线路进行检查和整改，确保符合用电安全规范。"
+                },
+                {
+                  "finding_id": "vf52bd2d52240933",
+                  "title": "材料堆放混乱",
+                  "reason": "材料堆放混乱，可能造成通道堵塞、材料倒塌或人员绊倒等风险，影响现场安全与作业效率。",
+                  "recommendation": "对现场材料进行分类、整齐堆放，并保持通道畅通，定期整理作业区域。"
+                }
+              ]
+            },
+            "input_hash": "86b13f1b297058245fbd7d4fd00e673f14b45c283291a77a8f161410d322214e",
+            "generated_at": "2026-09-12T11:10:09.393841+00:00",
+            "source": "ai_generated"
+          }
+        },
+        "vis-24d24e2538b81b61b2900ddc06776856": {
+          "zh-CN": {
+            "schema_version": 1,
+            "content_type": "vision_analysis",
+            "record_id": "vis-24d24e2538b81b61b2900ddc06776856",
+            "locale": "zh-CN",
+            "payload": {
+              "summary": "本次检测发现一项高风险人员安全问题：现场有人员未佩戴安全帽。",
+              "findings": [
+                {
+                  "finding_id": "vfe657efd4ed8c30",
+                  "title": "人员未佩戴安全帽",
+                  "reason": "该人员未佩戴安全帽，属于人员安全类高风险问题，头部缺乏防护，在施工环境中易受到坠落物或碰撞伤害。",
+                  "recommendation": "立即要求该人员停止作业并正确佩戴安全帽，同时由现场安全管理人员加强安全帽佩戴情况的巡查与监督。"
+                }
+              ]
+            },
+            "input_hash": "38319c3fc7a29a0a4fc3d5b4cd39c214f424a8828d739c650daa32b5899a1ca2",
+            "generated_at": "2026-09-12T09:25:15.452191+00:00",
+            "source": "ai_generated"
+          }
+        }
+      }
+    },
+    "ai_text_by_language": {
+      "en": {
+        "logs": {
+          "20260911095551167111": {
+            "summary": "The project commencement was delayed due to heavy rain. No safety, quality, equipment, or cost issues were reported. The only identified risk is a schedule delay caused by adverse weather.",
+            "risks": [
+              {
+                "title": "Schedule delay due to heavy rain",
+                "reason": "The log states that heavy rain led to the failure of the project's commencement, and the plan was delayed.",
+                "suggestion": "Develop a revised schedule with weather contingency allowances, monitor forecasts, and prepare for accelerated work once conditions improve."
+              }
+            ]
+          }
+        }
+      }
+    },
+    "absence_level": "中等缺勤",
+    "localized_user_text": {
+      "zh-CN": {
+        "name": "内罗毕经济适用房"
+      }
+    },
+    "vision_detection": {
+      "schema_version": 1,
+      "image_hash": "4acc77a449ab40b23d4ac6d272bac62fb6a28daaeb6035ff4f9b584b90882195",
+      "model_id": "deepseek-v4-flash-vision-exp",
+      "ontology_version": "1",
+      "findings": [
+        {
+          "finding_id": "vfde0373774fd650",
+          "object_key": "未佩戴安全帽",
+          "category_key": "人员安全",
+          "location": [
+            0.14,
+            0.27,
+            0.22,
+            0.33
+          ],
+          "confidence": 0.95,
+          "penalty": 30,
+          "level": "HIGH"
+        },
+        {
+          "finding_id": "vf044e377f374fe9",
+          "object_key": "未佩戴安全帽",
+          "category_key": "人员安全",
+          "location": [
+            0.49,
+            0.36,
+            0.54,
+            0.41
+          ],
+          "confidence": 0.95,
+          "penalty": 30,
+          "level": "HIGH"
+        },
+        {
+          "finding_id": "vfa5388cb9fd99f9",
+          "object_key": "未穿反光衣",
+          "category_key": "人员安全",
+          "location": [
+            0.14,
+            0.27,
+            0.22,
+            0.8
+          ],
+          "confidence": 0.85,
+          "penalty": 15,
+          "level": "MEDIUM"
+        },
+        {
+          "finding_id": "vf6a9a3c752f30f3",
+          "object_key": "未穿反光衣",
+          "category_key": "人员安全",
+          "location": [
+            0.49,
+            0.36,
+            0.54,
+            0.8
+          ],
+          "confidence": 0.85,
+          "penalty": 15,
+          "level": "MEDIUM"
+        },
+        {
+          "finding_id": "vffdfa9102152fcb",
+          "object_key": "临边无防护",
+          "category_key": "临边/高处",
+          "location": [
+            0.63,
+            0.62,
+            0.99,
+            0.95
+          ],
+          "confidence": 0.9,
+          "penalty": 30,
+          "level": "HIGH"
+        },
+        {
+          "finding_id": "vf248a1d3f802f80",
+          "object_key": "现场积水",
+          "category_key": "环境/其他",
+          "location": [
+            0.0,
+            0.62,
+            0.81,
+            0.99
+          ],
+          "confidence": 0.98,
+          "penalty": 15,
+          "level": "MEDIUM"
+        },
+        {
+          "finding_id": "vfba79b81bf2d89f",
+          "object_key": "临时用电不规范",
+          "category_key": "用电安全",
+          "location": [
+            0.28,
+            0.58,
+            0.62,
+            0.99
+          ],
+          "confidence": 0.88,
+          "penalty": 30,
+          "level": "HIGH"
+        },
+        {
+          "finding_id": "vf52bd2d52240933",
+          "object_key": "材料堆放混乱",
+          "category_key": "环境/其他",
+          "location": [
+            0.0,
+            0.35,
+            0.17,
+            0.75
+          ],
+          "confidence": 0.95,
+          "penalty": 15,
+          "level": "MEDIUM"
+        }
+      ],
+      "overall_level": "HIGH",
+      "total_penalty": 30
+    },
+    "visual_risk_level": "HIGH",
+    "visual_risk_penalty": 30,
+    "visual_risks": [
+      {
+        "finding_id": "vfde0373774fd650",
+        "object_key": "未佩戴安全帽",
+        "category_key": "人员安全",
+        "location": [
+          0.14,
+          0.27,
+          0.22,
+          0.33
+        ],
+        "confidence": 0.95,
+        "penalty": 30,
+        "level": "HIGH",
+        "level_key": "risk.level.high",
+        "risk_name": "未佩戴安全帽",
+        "risk_category": "人员安全",
+        "severity": "HIGH"
+      },
+      {
+        "finding_id": "vf044e377f374fe9",
+        "object_key": "未佩戴安全帽",
+        "category_key": "人员安全",
+        "location": [
+          0.49,
+          0.36,
+          0.54,
+          0.41
+        ],
+        "confidence": 0.95,
+        "penalty": 30,
+        "level": "HIGH",
+        "level_key": "risk.level.high",
+        "risk_name": "未佩戴安全帽",
+        "risk_category": "人员安全",
+        "severity": "HIGH"
+      },
+      {
+        "finding_id": "vfa5388cb9fd99f9",
+        "object_key": "未穿反光衣",
+        "category_key": "人员安全",
+        "location": [
+          0.14,
+          0.27,
+          0.22,
+          0.8
+        ],
+        "confidence": 0.85,
+        "penalty": 15,
+        "level": "MEDIUM",
+        "level_key": "risk.level.medium",
+        "risk_name": "未穿反光衣",
+        "risk_category": "人员安全",
+        "severity": "MEDIUM"
+      },
+      {
+        "finding_id": "vf6a9a3c752f30f3",
+        "object_key": "未穿反光衣",
+        "category_key": "人员安全",
+        "location": [
+          0.49,
+          0.36,
+          0.54,
+          0.8
+        ],
+        "confidence": 0.85,
+        "penalty": 15,
+        "level": "MEDIUM",
+        "level_key": "risk.level.medium",
+        "risk_name": "未穿反光衣",
+        "risk_category": "人员安全",
+        "severity": "MEDIUM"
+      },
+      {
+        "finding_id": "vffdfa9102152fcb",
+        "object_key": "临边无防护",
+        "category_key": "临边/高处",
+        "location": [
+          0.63,
+          0.62,
+          0.99,
+          0.95
+        ],
+        "confidence": 0.9,
+        "penalty": 30,
+        "level": "HIGH",
+        "level_key": "risk.level.high",
+        "risk_name": "临边无防护",
+        "risk_category": "临边/高处",
+        "severity": "HIGH"
+      },
+      {
+        "finding_id": "vf248a1d3f802f80",
+        "object_key": "现场积水",
+        "category_key": "环境/其他",
+        "location": [
+          0.0,
+          0.62,
+          0.81,
+          0.99
+        ],
+        "confidence": 0.98,
+        "penalty": 15,
+        "level": "MEDIUM",
+        "level_key": "risk.level.medium",
+        "risk_name": "现场积水",
+        "risk_category": "环境/其他",
+        "severity": "MEDIUM"
+      },
+      {
+        "finding_id": "vfba79b81bf2d89f",
+        "object_key": "临时用电不规范",
+        "category_key": "用电安全",
+        "location": [
+          0.28,
+          0.58,
+          0.62,
+          0.99
+        ],
+        "confidence": 0.88,
+        "penalty": 30,
+        "level": "HIGH",
+        "level_key": "risk.level.high",
+        "risk_name": "临时用电不规范",
+        "risk_category": "用电安全",
+        "severity": "HIGH"
+      },
+      {
+        "finding_id": "vf52bd2d52240933",
+        "object_key": "材料堆放混乱",
+        "category_key": "环境/其他",
+        "location": [
+          0.0,
+          0.35,
+          0.17,
+          0.75
+        ],
+        "confidence": 0.95,
+        "penalty": 15,
+        "level": "MEDIUM",
+        "level_key": "risk.level.medium",
+        "risk_name": "材料堆放混乱",
+        "risk_category": "环境/其他",
+        "severity": "MEDIUM"
+      }
+    ],
+    "visual_risk_resolved": true,
+    "visual_risk_updated_at": "2026-09-12T19:10",
+    "risk_categories": {
+      "施工安全": "HIGH",
+      "自然环境": "MEDIUM"
+    }
+  },
+  "Nairobi Infrastructure": {
+    "country": "Kenya",
+    "city": "Nairobi",
+    "type": "Infrastructure",
+    "workers": 180,
+    "start_date": "2026-02-01",
+    "end_date": "2027-02-01",
+    "project_scale": "Medium",
+    "baseline_score": 38,
+    "baseline_risk": {
+      "score": 38,
+      "level": "LOW",
+      "terrain": "Urban",
+      "drainage": "Good",
+      "rainfall": "Moderate",
+      "earthquake": "Low",
+      "risks": {
+        "heavy_rainfall": "LOW",
+        "flooding": "LOW",
+        "landslide": "LOW",
+        "earthquake": "LOW",
+        "extreme_heat": "LOW",
+        "strong_wind": "LOW"
+      },
+      "selected_hazards": {},
+      "risk_chains": [],
+      "impacts": [
+        "No major environmental construction impact identified."
+      ],
+      "actions": [
+        "Continue routine environmental monitoring.",
+        "Add identified environmental risks to the project risk register."
+      ]
+    },
+    "daily_logs": [],
+    "risk": "Low",
+    "address": "Nairobi, Kenya",
+    "starred": false,
+    "pinned": false,
+    "archived": false,
+    "ended_at": null,
+    "current_risk_score": 38,
+    "current_risk_updated_at": "2026-08-21T18:52",
+    "localized_content": {
+      "current_risk_explanation": {
+        "project": {
+          "zh-CN": {
+            "schema_version": 1,
+            "content_type": "current_risk_explanation",
+            "record_id": "project",
+            "locale": "zh-CN",
+            "payload": {
+              "summary": "当前风险处于低水平，主要因为基线风险本身较低（38分），且天气、每日日志、视觉和财务等动态因素均未提供额外风险贡献（均为0分），因此综合风险评分降至10分。",
+              "risk_level_text": "低风险",
+              "reasons": [
+                "基线风险等级为低，基线评分为38分，地形为城市，排水良好，降雨量适中，地震风险低。",
+                "基线风险中各项具体风险（强降雨、洪水、滑坡、地震、极端高温、强风）均为低。",
+                "当前风险各组成部分中，天气、每日日志、视觉和财务的贡献均为0分。",
+                "未提供近期天气数据，且无近期日志记录，因此没有额外的动态风险证据。"
+              ],
+              "recommendations": [
+                "针对强降雨风险，建议定期检查排水系统，确保城市排水畅通。",
+                "针对洪水风险，建议制定并演练洪水应急响应计划。",
+                "针对滑坡风险，建议监测周边边坡稳定性，尤其是在降雨后。",
+                "针对地震风险，建议进行地震风险评估并加固关键结构。",
+                "针对极端高温风险，建议提供防暑降温措施并调整高温时段作业安排。",
+                "针对强风风险，建议加固临时设施和高空作业设备，并关注大风预警。"
+              ]
+            },
+            "input_hash": "a01d9ff3a815d0347668718691974d6cbe15ce865c60f7360e4d1a6e48a608cf",
+            "generated_at": "2026-09-11T01:57:02.425299+00:00",
+            "source": "ai_generated"
+          }
+        }
+      }
+    }
+  },
+  "São Paulo Infrastructure": {
+    "country": "Brazil",
+    "city": "São Paulo",
+    "type": "Infrastructure",
+    "workers": 210,
+    "start_date": "2026-03-01",
+    "end_date": "2027-04-01",
+    "project_scale": "Large",
+    "baseline_score": 52,
+    "baseline_risk": {
+      "score": 52,
+      "level": "MEDIUM",
+      "terrain": "Urban",
+      "drainage": "Moderate",
+      "rainfall": "High",
+      "earthquake": "Low",
+      "risks": {
+        "heavy_rainfall": "MEDIUM",
+        "flooding": "MEDIUM",
+        "landslide": "LOW",
+        "earthquake": "LOW",
+        "extreme_heat": "LOW",
+        "strong_wind": "LOW"
+      },
+      "selected_hazards": {},
+      "risk_chains": [
+        "Heavy Rainfall → Increased Surface Runoff → Drainage Pressure → Site Water Accumulation → Safety + Schedule Risks"
+      ],
+      "impacts": [
+        "Weather-sensitive outdoor work may be interrupted."
+      ],
+      "actions": [
+        "Monitor weather conditions.",
+        "Inspect drainage systems regularly."
+      ]
+    },
+    "daily_logs": [],
+    "address": "São Paulo, Brazil",
+    "starred": false,
+    "pinned": false,
+    "archived": false,
+    "ended_at": null,
+    "risk": "Low",
+    "current_risk_score": 54,
+    "current_risk_updated_at": "2026-08-21T18:49"
+  },
+  "Brazil Housing Project": {
+    "country": "Brazil",
+    "city": "São Paulo",
+    "type": "Housing Construction",
+    "workers": 150,
+    "start_date": "2026-04-01",
+    "end_date": "2027-03-01",
+    "project_scale": "Medium",
+    "baseline_score": 35,
+    "baseline_risk": {
+      "score": 35,
+      "level": "LOW",
+      "terrain": "Urban",
+      "drainage": "Good",
+      "rainfall": "Moderate",
+      "earthquake": "Low",
+      "risks": {},
+      "selected_hazards": {},
+      "risk_chains": [],
+      "impacts": [],
+      "actions": [
+        "Continue routine environmental monitoring."
+      ]
+    },
+    "daily_logs": [],
+    "address": "São Paulo, Brazil",
+    "starred": false,
+    "pinned": false,
+    "archived": false,
+    "ended_at": null,
+    "risk": "Low",
+    "current_risk_score": 37,
+    "current_risk_updated_at": "2026-08-21T18:49"
+  },
+  "Johannesburg Project": {
+    "country": "South Africa",
+    "city": "Johannesburg",
+    "type": "Construction",
+    "workers": 260,
+    "start_date": "2026-01-15",
+    "end_date": "2027-05-01",
+    "project_scale": "Large",
+    "baseline_score": 49,
+    "baseline_risk": {
+      "score": 49,
+      "level": "MEDIUM",
+      "terrain": "Hilly",
+      "drainage": "Moderate",
+      "rainfall": "High",
+      "earthquake": "Low",
+      "risks": {
+        "heavy_rainfall": "MEDIUM",
+        "flooding": "MEDIUM",
+        "landslide": "MEDIUM",
+        "earthquake": "LOW",
+        "extreme_heat": "LOW",
+        "strong_wind": "LOW"
+      },
+      "selected_hazards": {},
+      "risk_chains": [],
+      "impacts": [],
+      "actions": [
+        "Inspect drainage systems.",
+        "Monitor slope stability."
+      ]
+    },
+    "daily_logs": [],
+    "address": "Johannesburg, South Africa",
+    "starred": false,
+    "pinned": false,
+    "archived": false,
+    "ended_at": null,
+    "risk": "Low",
+    "current_risk_score": 49,
+    "current_risk_updated_at": "2026-08-21T18:49"
+  },
+  "Cape Town Housing": {
+    "country": "South Africa",
+    "city": "Cape Town",
+    "type": "Housing",
+    "workers": 140,
+    "start_date": "2026-05-01",
+    "end_date": "2027-04-01",
+    "project_scale": "Medium",
+    "baseline_score": 34,
+    "baseline_risk": {
+      "score": 34,
+      "level": "LOW",
+      "terrain": "Coastal",
+      "drainage": "Good",
+      "rainfall": "Low",
+      "earthquake": "Low",
+      "risks": {},
+      "selected_hazards": {},
+      "risk_chains": [],
+      "impacts": [],
+      "actions": [
+        "Continue routine environmental monitoring."
+      ]
+    },
+    "daily_logs": [
+      {
+        "date": "2026-08-15",
+        "severity": "LOW",
+        "title": "Routine Site Preparation",
+        "description": "Site preparation proceeded normally. Ground clearing and material organization were completed according to schedule. No safety incidents or equipment problems were reported.",
+        "log_id": "20260821183834533962",
+        "ai_analysis": {
+          "level": "LOW",
+          "score": 25,
+          "summary": "Imported from an earlier RiskPilot log.",
+          "risks": [],
+          "source": "Migrated"
+        }
+      },
+      {
+        "date": "2026-08-16",
+        "severity": "LOW",
+        "title": "Strong Wind Affected Material Handling",
+        "description": "Strong coastal winds affected the handling of lightweight construction materials. Workers temporarily reduced outdoor lifting activities and secured loose materials around the site. No injuries were reported.",
+        "log_id": "20260821183834533968",
+        "ai_analysis": {
+          "level": "LOW",
+          "score": 25,
+          "summary": "Imported from an earlier RiskPilot log.",
+          "risks": [],
+          "source": "Migrated"
+        }
+      },
+      {
+        "date": "2026-08-17",
+        "severity": "MEDIUM",
+        "title": "Concrete Delivery Delay",
+        "description": "A scheduled concrete delivery arrived approximately two hours late due to traffic congestion. The delay affected part of the morning construction schedule, but work resumed after the materials arrived.",
+        "log_id": "20260821183834533974",
+        "ai_analysis": {
+          "level": "MEDIUM",
+          "score": 55,
+          "summary": "Imported from an earlier RiskPilot log.",
+          "risks": [],
+          "source": "Migrated"
+        }
+      },
+      {
+        "date": "2026-08-18",
+        "severity": "HIGH",
+        "title": "Heavy Rain Caused Water Accumulation",
+        "description": "Heavy rainfall caused temporary water accumulation in several low-lying areas of the construction site. Outdoor work in affected areas was suspended while drainage and access conditions were checked.",
+        "log_id": "20260821183834533980",
+        "ai_analysis": {
+          "level": "HIGH",
+          "score": 80,
+          "summary": "Imported from an earlier RiskPilot log.",
+          "risks": [],
+          "source": "Migrated"
+        }
+      },
+      {
+        "date": "2026-08-19",
+        "severity": "MEDIUM",
+        "title": "Wet Ground Conditions",
+        "description": "Following the previous day's rainfall, several sections of the site remained wet and slippery. Workers were advised to use designated access routes, and material movement in the affected areas was limited.",
+        "log_id": "20260821183834533986",
+        "ai_analysis": {
+          "level": "MEDIUM",
+          "score": 55,
+          "summary": "Imported from an earlier RiskPilot log.",
+          "risks": [],
+          "source": "Migrated"
+        }
+      },
+      {
+        "date": "2026-08-20",
+        "severity": "LOW",
+        "title": "Site Conditions Stabilized",
+        "description": "Site conditions improved after the rainfall. Standing water was cleared and normal construction activities resumed. No new major risks or safety incidents were reported.",
+        "log_id": "20260821183834533992",
+        "ai_analysis": {
+          "level": "LOW",
+          "score": 25,
+          "summary": "Imported from an earlier RiskPilot log.",
+          "risks": [],
+          "source": "Migrated"
+        }
+      }
+    ],
+    "address": "Cape Town, South Africa",
+    "starred": false,
+    "pinned": false,
+    "risk": "Low",
+    "archived": true,
+    "ended_at": "2026-08-25",
+    "current_risk_score": 63,
+    "current_risk_updated_at": "2026-08-21T18:53"
+  },
+  "Tokyo house repairment": {
+    "country": "Japan",
+    "city": "Tokyo",
+    "type": "Residential Construction",
+    "workers": 100,
+    "start_date": "2026-08-14",
+    "end_date": "2026-08-14",
+    "project_scale": "Small",
+    "baseline_score": 20,
+    "baseline_risk": {
+      "score": 20,
+      "level": "LOW",
+      "terrain": "Flat",
+      "drainage": "Good",
+      "rainfall": "Low",
+      "earthquake": "Low",
+      "risks": {
+        "heavy_rainfall": "LOW",
+        "flooding": "LOW",
+        "landslide": "LOW",
+        "earthquake": "LOW",
+        "extreme_heat": "LOW",
+        "strong_wind": "LOW"
+      },
+      "selected_hazards": {
+        "heavy_rainfall": false,
+        "flooding": false,
+        "landslide": false,
+        "earthquake": false,
+        "extreme_heat": false,
+        "strong_wind": false,
+        "drought": false,
+        "wildfire": false,
+        "other": false
+      },
+      "risk_chains": [],
+      "impacts": [
+        "No major environmental construction impact has been identified."
+      ],
+      "actions": [
+        "Add identified environmental risks to the project risk register."
+      ]
+    },
+    "daily_logs": [],
+    "risk": "Low",
+    "address": "Tokyo, Japan",
+    "starred": false,
+    "pinned": false,
+    "archived": false,
+    "ended_at": null,
+    "current_risk_score": 27,
+    "current_risk_updated_at": "2026-08-21T18:53"
+  },
+  "Bucharest Residential Development": {
+    "country": "Romania",
+    "city": "Bucharest",
+    "address": "15 Strada Mihai Viteazul, Bucharest, Romania",
+    "type": "Residential",
+    "workers": 180,
+    "project_scale": "Small",
+    "start_date": "2026-08-15",
+    "end_date": "2026-08-21",
+    "baseline_score": 20,
+    "baseline_risk": {
+      "score": 20,
+      "level": "LOW",
+      "country": "Romania",
+      "city": "Bucharest",
+      "project_type": "Residential",
+      "project_scale": "Small",
+      "start_date": "2026-08-15",
+      "end_date": "2026-08-21",
+      "terrain": "Flat",
+      "drainage": "Good",
+      "rainfall": "Low",
+      "earthquake": "Low",
+      "risks": {
+        "heavy_rainfall": "LOW",
+        "flooding": "LOW",
+        "landslide": "LOW",
+        "earthquake": "LOW",
+        "extreme_heat": "LOW",
+        "strong_wind": "LOW"
+      },
+      "selected_hazards": {
+        "heavy_rainfall": false,
+        "flooding": false,
+        "landslide": false,
+        "earthquake": false,
+        "extreme_heat": false,
+        "strong_wind": false,
+        "drought": false,
+        "wildfire": false,
+        "other": false
+      },
+      "risk_chains": [],
+      "impacts": [
+        "No major environmental construction impact has been identified from the selected conditions."
+      ],
+      "actions": [
+        "Add identified environmental risks to the project risk register."
+      ]
+    },
+    "risk": "Low",
+    "daily_logs": [
+      {
+        "log_id": "20260821185843697223",
+        "date": "2026-08-15",
+        "title": "Site preparation and foundation excavation started",
+        "description": "Foundation excavation started according to the construction schedule. Soil conditions were generally stable, and excavation equipment operated normally. No major safety incidents were reported. Workers completed the initial site preparation and drainage inspection.",
+        "severity": "MEDIUM",
+        "ai_analysis": {
+          "level": "MEDIUM",
+          "score": 56,
+          "summary": "AI analysis unavailable; temporary rule-based assessment was used.",
+          "risks": [],
+          "reasons": [
+            "Weather / water signal",
+            "Equipment signal"
+          ],
+          "source": "Fallback",
+          "error": "Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_key`, or set the `OPENAI_API_KEY` or `OPENAI_ADMIN_KEY` environment variable."
+        },
+        "created_at": "2026-08-21T18:58"
+      },
+      {
+        "log_id": "20260821185911972466",
+        "date": "2026-08-16",
+        "title": "Heavy rainfall slowed excavation work",
+        "description": "Heavy rainfall occurred during the afternoon. Several excavation areas became wet and muddy, and construction vehicles had difficulty moving through the site. Workers temporarily stopped excavation activities in the affected areas and checked drainage conditions.",
+        "severity": "LOW",
+        "ai_analysis": {
+          "level": "LOW",
+          "score": 24,
+          "summary": "AI analysis unavailable; temporary rule-based assessment was used.",
+          "risks": [],
+          "reasons": [
+            "Weather / water signal"
+          ],
+          "source": "Fallback",
+          "error": "Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_key`, or set the `OPENAI_API_KEY` or `OPENAI_ADMIN_KEY` environment variable."
+        },
+        "created_at": "2026-08-21T18:59"
+      },
+      {
+        "log_id": "20260821185951969855",
+        "date": "2026-08-17",
+        "title": "Water accumulation found near excavation area",
+        "description": "Water accumulation was discovered near the eastern section of the foundation excavation after overnight rain. Drainage pumps were activated, but part of the excavation remained muddy. Workers were instructed to avoid entering the affected area until the ground conditions improved.",
+        "severity": "LOW",
+        "ai_analysis": {
+          "level": "LOW",
+          "score": 24,
+          "summary": "AI analysis unavailable; temporary rule-based assessment was used.",
+          "risks": [],
+          "reasons": [
+            "Weather / water signal"
+          ],
+          "source": "Fallback",
+          "error": "Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_key`, or set the `OPENAI_API_KEY` or `OPENAI_ADMIN_KEY` environment variable."
+        },
+        "created_at": "2026-08-21T18:59"
+      },
+      {
+        "log_id": "20260821190015770293",
+        "date": "2026-08-18",
+        "title": "Excavation wall instability observed",
+        "description": "During the morning inspection, workers observed localized soil movement along one section of the excavation wall. No collapse occurred, but loose soil was visible near the edge. Excavation work in this section was suspended while the site team inspected the slope stability and installed additional temporary support.",
+        "severity": "MEDIUM",
+        "ai_analysis": {
+          "level": "MEDIUM",
+          "score": 48,
+          "summary": "AI analysis unavailable; temporary rule-based assessment was used.",
+          "risks": [],
+          "reasons": [
+            "Safety / incident signal"
+          ],
+          "source": "Fallback",
+          "error": "Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_key`, or set the `OPENAI_API_KEY` or `OPENAI_ADMIN_KEY` environment variable."
+        },
+        "created_at": "2026-08-21T19:00"
+      },
+      {
+        "log_id": "20260821190038002894",
+        "date": "2026-08-19",
+        "title": "Temporary support installed and excavation resumed partially",
+        "description": "Additional temporary support was installed along the affected excavation wall. The site inspection confirmed that the remaining excavation areas were stable. Work resumed in unaffected sections, while the previously unstable section remained restricted.",
+        "severity": "LOW",
+        "ai_analysis": {
+          "level": "LOW",
+          "score": 0,
+          "summary": "AI analysis unavailable; temporary rule-based assessment was used.",
+          "risks": [],
+          "reasons": [],
+          "source": "Fallback",
+          "error": "Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_key`, or set the `OPENAI_API_KEY` or `OPENAI_ADMIN_KEY` environment variable."
+        },
+        "created_at": "2026-08-21T19:00"
+      },
+      {
+        "log_id": "20260821190104767423",
+        "date": "2026-08-20",
+        "title": "Excavation conditions stabilized",
+        "description": "Drainage work was completed and the excavation area was inspected again. Ground conditions improved significantly, and no further soil movement was observed. Construction resumed in most areas under increased monitoring. The previously restricted section remained under observation.",
+        "severity": "LOW",
+        "ai_analysis": {
+          "level": "LOW",
+          "score": 24,
+          "summary": "AI analysis unavailable; temporary rule-based assessment was used.",
+          "risks": [],
+          "reasons": [
+            "Weather / water signal"
+          ],
+          "source": "Fallback",
+          "error": "Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_key`, or set the `OPENAI_API_KEY` or `OPENAI_ADMIN_KEY` environment variable."
+        },
+        "created_at": "2026-08-21T19:01"
+      }
+    ],
+    "starred": false,
+    "pinned": false,
+    "archived": true,
+    "ended_at": "2026-08-21"
+  },
+  "Nairobi Office Complex": {
+    "country": "Kenya",
+    "city": "Nairobi",
+    "address": "Mombasa Road, Industrial Area, Nairobi, Kenya",
+    "type": "Commercial",
+    "workers": 85,
+    "project_scale": "Medium",
+    "start_date": "2026-08-24",
+    "end_date": "2026-08-31",
+    "baseline_score": 25,
+    "baseline_risk": {
+      "success": true,
+      "level": "LOW",
+      "score": 25,
+      "terrain": "Unknown",
+      "drainage": "Unknown",
+      "rainfall": "Unknown",
+      "earthquake": "Unknown",
+      "risks": {
+        "heavy_rainfall": "LOW",
+        "flooding": "LOW",
+        "landslide": "LOW",
+        "earthquake": "LOW",
+        "extreme_heat": "LOW",
+        "strong_wind": "LOW",
+        "drought": "LOW",
+        "wildfire": "LOW"
+      },
+      "selected_hazards": {
+        "heavy_rainfall": false,
+        "flooding": false,
+        "landslide": false,
+        "earthquake": false,
+        "extreme_heat": false,
+        "strong_wind": false,
+        "drought": false,
+        "wildfire": false,
+        "other": false
+      },
+      "risk_chains": [],
+      "impacts": [
+        "AI environmental assessment was unavailable."
+      ],
+      "actions": [
+        "Verify environmental conditions manually before construction begins."
+      ],
+      "source": "Fallback",
+      "error": "Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_key`, or set the `OPENAI_API_KEY` or `OPENAI_ADMIN_KEY` environment variable."
+    },
+    "risk": "Low",
+    "daily_logs": [
+      {
+        "log_id": "20260825121134887357",
+        "date": "2026-08-23",
+        "title": "",
+        "description": "今日施工内容：\n\n07:30 完成班前安全教育。\n08:00 5层梁板钢筋绑扎。\n08:30 5层模板安装及加固。\n09:00 塔吊进行钢筋及模板材料吊运。\n10:20 钢筋材料到场，完成数量及规格检查。\n11:00 对5层钢筋、模板进行隐蔽验收。\n13:00 开始5层混凝土浇筑。\n15:10 混凝土浇筑完成。\n16:00 对浇筑区域进行养护及现场清理。\n\n机械设备：\n\n塔吊：1台，正常\n混凝土泵：1台，正常\n挖掘机：1台，正常\n运输车辆：4辆，正常\n\n材料进场：\n\n钢筋：正常到场\n商品混凝土：按计划供应\n模板材料：库存充足\n\n安全情况：\n\n今日完成班前安全教育1次。\n现场安全巡查2次。\n未发生人员受伤事故。\n未发现重大安全隐患。\n\n质量情况：\n\n钢筋规格及间距检查合格。\n模板支撑检查合格。\n混凝土浇筑过程正常。\n\n异常情况：\n\n上午10:40发现部分材料堆放位置影响通道，已及时调整。\n其他无异常。\n\n明日计划：\n\n继续5层主体结构施工。\n开展混凝土养护。\n准备6层钢筋及模板材料。",
+        "severity": "LOW",
+        "ai_analysis": {
+          "level": "LOW",
+          "score": 0,
+          "summary": "AI analysis unavailable; temporary rule-based assessment was used.",
+          "risks": [],
+          "reasons": [],
+          "source": "Fallback",
+          "error": "Connection error."
+        },
+        "created_at": "2026-08-25T12:11",
+        "updated_at": "2026-08-25T12:12"
+      },
+      {
+        "log_id": "20260825121402965165",
+        "date": "2026-08-24",
+        "title": "",
+        "description": "今日施工内容\n07:30 完成班前安全教育。\n08:00 开始6层梁板钢筋施工。\n09:30 塔吊完成钢筋材料吊运。\n11:00 完成部分模板安装。\n12:40 开始降雨，现场暂停高处作业。\n13:10 对脚手架、临时用电设施及排水情况进行检查。\n14:00 雨势减弱，现场排水工作继续进行。\n15:30 降雨停止，对施工区域进行复查。\n16:00 恢复部分地面施工。\n17:00 完成现场清理。\n机械设备\n塔吊：正常\n混凝土泵：正常\n发电机：正常\n排水泵：正常运行\n材料情况\n\n钢筋、模板库存充足。下午材料运输因降雨延迟约2小时。\n\n安全情况\n\n降雨期间暂停高处作业。现场未发生人员受伤事故。\n\n异常情况\n下午出现短时强降雨。\n材料运输延迟约2小时。\n施工区域东侧出现少量积水，已通过排水泵处理。\n排水完成后未发现明显地基或边坡异常。\n明日计划\n\n检查施工区域及脚手架状态，根据天气情况安排6层主体结构施工。",
+        "severity": "MEDIUM",
+        "ai_analysis": {
+          "level": "MEDIUM",
+          "score": 78,
+          "summary": "当日施工总体平稳，未发生安全事故，但降雨对工期、质量和成本造成一定影响，需加强雨后检查和进度协调。",
+          "risks": [
+            {
+              "category": "安全",
+              "title": "降雨导致高处作业风险",
+              "level": "中",
+              "reason": "降雨期间暂停高处作业，但雨后恢复施工前需确保作业面安全，存在湿滑、脚手架稳定性等潜在风险。",
+              "suggestion": "雨后全面检查脚手架、临边防护及作业面干燥情况，确认安全后再恢复高处作业。"
+            },
+            {
+              "category": "工期",
+              "title": "材料运输延迟影响进度",
+              "level": "中",
+              "reason": "下午降雨导致材料运输延迟约2小时，可能影响后续施工进度。",
+              "suggestion": "与供应商协调调整运输时间，避开降雨时段，或提前储备关键材料以减少天气影响。"
+            },
+            {
+              "category": "质量",
+              "title": "降雨对钢筋和模板质量的影响",
+              "level": "低",
+              "reason": "降雨可能导致钢筋锈蚀或模板受潮变形，影响施工质量。",
+              "suggestion": "雨后检查钢筋表面锈蚀情况，必要时除锈；检查模板变形情况，及时更换受损模板。"
+            },
+            {
+              "category": "成本",
+              "title": "排水和清理增加成本",
+              "level": "低",
+              "reason": "降雨导致现场积水，需使用排水泵处理并增加清理工作，可能增加额外成本。",
+              "suggestion": "优化排水系统，提前做好雨季施工预案，减少积水处理成本。"
+            }
+          ],
+          "source": "AI"
+        },
+        "created_at": "2026-08-25T12:14"
+      },
+      {
+        "log_id": "20260825121329494098",
+        "date": "2026-08-25",
+        "title": "",
+        "description": "今日施工内容\n07:30 完成班前安全教育。\n08:00 对昨夜降雨后的施工现场进行检查。\n08:30 发现东侧材料堆放区存在明显积水。\n09:00 排水人员开始处理积水。\n09:30 塔吊进行例行检查。\n10:00 塔吊检查发现电气系统存在间歇性故障，暂停使用。\n10:30 维修人员到场进行检查。\n11:30 塔吊仍未恢复运行。\n12:00 持续降雨，现场暂停高处作业。\n13:30 一批混凝土材料供应商通知运输车辆延迟。\n14:30 东侧施工区域积水增加。\n15:00 现场管理人员决定暂停受影响区域施工。\n16:00 对塔吊、排水系统及材料储存区进行再次检查。\n17:00 项目经理要求重新评估次日施工计划。\n机械设备\n塔吊：暂停使用，存在电气故障\n混凝土泵：待命\n发电机：正常\n排水泵：持续运行\n材料情况\n\n混凝土供应延迟。部分材料储存区域受到积水影响，需要重新检查材料状态。\n\n安全情况\n持续降雨期间暂停高处作业。\n塔吊停止运行。\n受积水影响区域设置临时警戒。\n今日未发生人员受伤事故。\n异常情况\n\n主要异常：\n\n持续降雨\n材料堆放区积水\n塔吊电气故障\n混凝土运输延迟\n部分施工区域暂停作业\n明日计划\n完成塔吊维修及安全复检。\n检查现场排水情况。\n根据天气预报决定是否恢复高处施工。\n重新安排受影响的材料运输及施工计划。",
+        "severity": "MEDIUM",
+        "ai_analysis": {
+          "level": "MEDIUM",
+          "score": 45,
+          "summary": "当前项目面临持续降雨、塔吊故障和材料供应延迟等多重风险，整体风险等级为中风险。安全方面需重点关注塔吊故障和积水问题，工期受塔吊和混凝土供应影响较大，质量风险主要来自材料受潮，成本风险相对较低。建议加强设备维修和排水管理，调整施工计划以降低影响。",
+          "risks": [
+            {
+              "category": "安全",
+              "title": "塔吊电气故障",
+              "level": "高",
+              "reason": "塔吊电气系统存在间歇性故障，已暂停使用，存在安全隐患。",
+              "suggestion": "立即安排专业维修人员全面检修塔吊电气系统，修复后必须进行安全复检，确认无故障后方可恢复使用。"
+            },
+            {
+              "category": "安全",
+              "title": "材料堆放区积水",
+              "level": "中",
+              "reason": "东侧材料堆放区存在明显积水，且持续降雨导致积水增加，可能影响材料质量并造成滑倒等安全隐患。",
+              "suggestion": "加强排水措施，增设排水泵和临时排水沟，对积水区域进行警戒隔离，并尽快转移受影响的材料至干燥区域。"
+            },
+            {
+              "category": "工期",
+              "title": "塔吊故障导致工期延误",
+              "level": "中",
+              "reason": "塔吊因电气故障暂停使用，影响吊装作业，且维修时间不确定，可能导致工期延误。",
+              "suggestion": "协调维修资源，加快维修进度，同时调整施工计划，将非塔吊依赖的工序提前安排，减少对总工期的影响。"
+            },
+            {
+              "category": "工期",
+              "title": "混凝土供应延迟",
+              "level": "中",
+              "reason": "混凝土材料供应商通知运输车辆延迟，影响混凝土浇筑进度，可能导致工期延误。",
+              "suggestion": "与供应商沟通确认新的到货时间，必要时启用备用供应商，同时调整施工顺序，优先安排其他不受影响的工序。"
+            },
+            {
+              "category": "质量",
+              "title": "材料受潮风险",
+              "level": "中",
+              "reason": "部分材料储存区域受到积水影响，可能导致材料受潮、性能下降，影响施工质量。",
+              "suggestion": "对受积水影响的材料进行逐一检查，评估其质量状况，不合格材料及时更换，并加强材料储存区的防雨防潮措施。"
+            },
+            {
+              "category": "成本",
+              "title": "设备维修和排水成本增加",
+              "level": "低",
+              "reason": "塔吊维修和持续排水需要额外费用，可能导致成本超支。",
+              "suggestion": "记录所有额外支出，评估成本影响，优化排水方案以降低费用，并考虑向供应商索赔因延迟造成的损失。"
+            }
+          ],
+          "source": "AI"
+        },
+        "created_at": "2026-08-25T12:13",
+        "updated_at": "2026-08-25T12:15"
+      }
+    ],
+    "starred": false,
+    "pinned": false,
+    "archived": false,
+    "ended_at": null
+  },
+  "Kampala Hillside Residential Project": {
+    "country": "Uganda",
+    "city": "Kampala",
+    "address": "Kira Road, Bukoto District, Kampala, Uganda",
+    "type": "Residential",
+    "workers": 120,
+    "project_scale": "Medium",
+    "start_date": "2026-08-24",
+    "end_date": "2026-08-31",
+    "baseline_score": 25,
+    "baseline_risk": {
+      "success": true,
+      "level": "LOW",
+      "score": 25,
+      "terrain": "Unknown",
+      "drainage": "Unknown",
+      "rainfall": "Unknown",
+      "earthquake": "Unknown",
+      "risks": {
+        "heavy_rainfall": "LOW",
+        "flooding": "LOW",
+        "landslide": "LOW",
+        "earthquake": "LOW",
+        "extreme_heat": "LOW",
+        "strong_wind": "LOW",
+        "drought": "LOW",
+        "wildfire": "LOW"
+      },
+      "selected_hazards": {
+        "heavy_rainfall": false,
+        "flooding": false,
+        "landslide": false,
+        "earthquake": false,
+        "extreme_heat": false,
+        "strong_wind": false,
+        "drought": false,
+        "wildfire": false,
+        "other": false
+      },
+      "risk_chains": [],
+      "impacts": [
+        "AI environmental assessment was unavailable."
+      ],
+      "actions": [
+        "Verify environmental conditions manually before construction begins."
+      ],
+      "source": "Fallback",
+      "error": "Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_key`, or set the `OPENAI_API_KEY` or `OPENAI_ADMIN_KEY` environment variable."
+    },
+    "risk": "Low",
+    "daily_logs": [],
+    "starred": false,
+    "pinned": false,
+    "archived": false,
+    "ended_at": null
+  },
+  "Lusaka Infrastructure Hub": {
+    "country": "Zambia",
+    "city": "Lusaka",
+    "address": "Great East Road, Munali District, Lusaka, Zambia",
+    "type": "Infrastructure",
+    "workers": 210,
+    "project_scale": "Large",
+    "start_date": "2026-08-24",
+    "end_date": "2026-08-31",
+    "baseline_score": 25,
+    "baseline_risk": {
+      "success": true,
+      "level": "LOW",
+      "score": 25,
+      "terrain": "Unknown",
+      "drainage": "Unknown",
+      "rainfall": "Unknown",
+      "earthquake": "Unknown",
+      "risks": {
+        "heavy_rainfall": "LOW",
+        "flooding": "LOW",
+        "landslide": "LOW",
+        "earthquake": "LOW",
+        "extreme_heat": "LOW",
+        "strong_wind": "LOW",
+        "drought": "LOW",
+        "wildfire": "LOW"
+      },
+      "selected_hazards": {
+        "heavy_rainfall": false,
+        "flooding": false,
+        "landslide": false,
+        "earthquake": false,
+        "extreme_heat": false,
+        "strong_wind": false,
+        "drought": false,
+        "wildfire": false,
+        "other": false
+      },
+      "risk_chains": [],
+      "impacts": [
+        "AI environmental assessment was unavailable."
+      ],
+      "actions": [
+        "Verify environmental conditions manually before construction begins."
+      ],
+      "source": "Fallback",
+      "error": "Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_key`, or set the `OPENAI_API_KEY` or `OPENAI_ADMIN_KEY` environment variable."
+    },
+    "risk": "Low",
+    "daily_logs": [],
+    "starred": false,
+    "pinned": false,
+    "archived": false,
+    "ended_at": null
+  },
+  "balabala": {
+    "country": "China",
+    "city": "zhuhai",
+    "address": "xiangzhou",
+    "type": "Commercial",
+    "workers": 100,
+    "project_scale": "Medium",
+    "start_date": "2026-09-10",
+    "end_date": "2026-09-17",
+    "baseline_score": 30,
+    "baseline_risk": {
+      "success": true,
+      "level": "LOW",
+      "score": 30,
+      "terrain": "Unknown",
+      "drainage": "Unknown",
+      "rainfall": "Unknown",
+      "earthquake": "LOW",
+      "risks": {
+        "heavy_rainfall": "LOW",
+        "flooding": "LOW",
+        "landslide": "LOW",
+        "earthquake": "LOW",
+        "extreme_heat": "LOW",
+        "strong_wind": "LOW",
+        "drought": "LOW",
+        "wildfire": "LOW"
+      },
+      "selected_hazards": {
+        "heavy_rainfall": false,
+        "flooding": false,
+        "landslide": false,
+        "earthquake": false,
+        "extreme_heat": false,
+        "strong_wind": false,
+        "drought": false,
+        "wildfire": false,
+        "other": false
+      },
+      "risk_chains": [],
+      "impacts": [],
+      "actions": [],
+      "source": "AI"
+    },
+    "risk": "Low",
+    "daily_logs": [
+      {
+        "log_id": "20260910042210923916",
+        "date": "2026-09-10",
+        "title": "罢工",
+        "description": "没人干活",
+        "severity": "LOW",
+        "ai_analysis": {
+          "level": "LOW",
+          "score": 10,
+          "summary": "当前项目因罢工导致全面停工，存在严重的工期延误风险，并可能引发成本增加。需立即采取行动解决劳资纠纷，恢复施工，并评估对整体进度和成本的影响。",
+          "risks": [
+            {
+              "title": "全面停工风险",
+              "reason": "施工日志明确记载'罢工'和'没人干活'，表明现场已无工人作业，施工活动完全停止。",
+              "suggestion": "立即与工人代表或工会沟通，了解罢工原因（如工资、安全条件等），尽快协商解决；同时启动应急预案，评估对关键节点的影响，必要时调整施工计划或调配其他劳动力资源。",
+              "severity": 1,
+              "likelihood": 1,
+              "exposure": 1,
+              "raw_risk": 1,
+              "score": 10,
+              "level": "LOW"
+            },
+            {
+              "title": "成本增加风险",
+              "reason": "罢工导致停工，可能产生窝工费用、设备闲置费用以及赶工成本，日志虽未明确提及，但停工必然带来成本压力。",
+              "suggestion": "详细记录停工期间的人工、设备、管理成本，与合同对照，及时向业主或相关方索赔；同时评估复工后赶工所需额外费用，并纳入成本控制计划。",
+              "severity": 1,
+              "likelihood": 1,
+              "exposure": 1,
+              "raw_risk": 1,
+              "score": 10,
+              "level": "LOW"
+            }
+          ],
+          "risk_count": 2,
+          "scoring_method": "RiskPilot S × L × E Risk Model",
+          "formula": "Risk = Severity × Likelihood × Exposure",
+          "score_type": "Relative Risk Index",
+          "source": "AI Risk Extraction + Deterministic Scoring Engine"
+        },
+        "created_at": "2026-09-10T04:22"
+      },
+      {
+        "log_id": "20260910042218607685",
+        "date": "2026-09-10",
+        "title": "罢工",
+        "description": "没人干活",
+        "severity": "LOW",
+        "ai_analysis": {
+          "level": "LOW",
+          "score": 10,
+          "summary": "施工日志显示发生罢工，现场无人作业，存在严重的安全隐患和工期延误风险，同时可能带来成本增加。需立即采取行动解决罢工问题，恢复施工秩序。",
+          "risks": [
+            {
+              "title": "现场无人看管导致安全风险",
+              "reason": "施工日志明确记载'罢工'和'没人干活'，现场可能处于无人监管状态，存在安全隐患。",
+              "suggestion": "立即安排安全管理人员进行现场巡查，确保现场封闭管理，防止无关人员进入，并检查已完工程的安全防护措施。",
+              "severity": 1,
+              "likelihood": 1,
+              "exposure": 1,
+              "raw_risk": 1,
+              "score": 10,
+              "level": "LOW"
+            },
+            {
+              "title": "全面停工导致工期延误",
+              "reason": "日志记载'罢工'和'没人干活'，表明施工活动完全停止，将直接影响施工进度。",
+              "suggestion": "立即启动应急预案，与工人代表进行谈判，解决罢工诉求，尽快恢复施工；同时评估延误对总工期的影响，制定赶工计划。",
+              "severity": 1,
+              "likelihood": 1,
+              "exposure": 1,
+              "raw_risk": 1,
+              "score": 10,
+              "level": "LOW"
+            },
+            {
+              "title": "停工造成成本增加",
+              "reason": "罢工导致停工，可能产生窝工费、设备租赁费、管理费等额外成本，且工期延误可能引发索赔。",
+              "suggestion": "详细记录停工期间的人员、设备、管理费用，及时与相关方沟通，收集证据，为后续索赔或协商提供依据。",
+              "severity": 1,
+              "likelihood": 1,
+              "exposure": 1,
+              "raw_risk": 1,
+              "score": 10,
+              "level": "LOW"
+            }
+          ],
+          "risk_count": 3,
+          "scoring_method": "RiskPilot S × L × E Risk Model",
+          "formula": "Risk = Severity × Likelihood × Exposure",
+          "score_type": "Relative Risk Index",
+          "source": "AI Risk Extraction + Deterministic Scoring Engine"
+        },
+        "created_at": "2026-09-10T04:22"
+      }
+    ],
+    "starred": false,
+    "pinned": false,
+    "archived": false,
+    "ended_at": null
+  }
+}

@@ -1,0 +1,113 @@
+[
+  {
+    "code": "en",
+    "native_name": "English",
+    "english_name": "English",
+    "fallback": null,
+    "direction": "ltr",
+    "ai_language_name": "English",
+    "status": "stable",
+    "ui_enabled": true,
+    "is_default": true
+  },
+  {
+    "code": "zh-CN",
+    "native_name": "简体中文",
+    "english_name": "Simplified Chinese",
+    "fallback": "en",
+    "direction": "ltr",
+    "ai_language_name": "Simplified Chinese",
+    "status": "stable",
+    "ui_enabled": true
+  },
+  {
+    "code": "es",
+    "native_name": "Español",
+    "english_name": "Spanish",
+    "fallback": "en",
+    "direction": "ltr",
+    "ai_language_name": "Spanish",
+    "status": "experimental",
+    "ui_enabled": true
+  },
+  {
+    "code": "pt-BR",
+    "native_name": "Português (Brasil)",
+    "english_name": "Portuguese (Brazil)",
+    "fallback": "en",
+    "direction": "ltr",
+    "ai_language_name": "Brazilian Portuguese",
+    "status": "experimental",
+    "ui_enabled": true
+  },
+  {
+    "code": "fr",
+    "native_name": "Français",
+    "english_name": "French",
+    "fallback": "en",
+    "direction": "ltr",
+    "ai_language_name": "French",
+    "status": "experimental",
+    "ui_enabled": true
+  },
+  {
+    "code": "sw",
+    "native_name": "Kiswahili",
+    "english_name": "Swahili",
+    "fallback": "en",
+    "direction": "ltr",
+    "ai_language_name": "Swahili",
+    "status": "experimental",
+    "ui_enabled": true
+  },
+  {
+    "code": "de",
+    "native_name": "Deutsch",
+    "english_name": "German",
+    "fallback": "en",
+    "direction": "ltr",
+    "ai_language_name": "German",
+    "status": "planned",
+    "ui_enabled": false
+  },
+  {
+    "code": "ar",
+    "native_name": "العربية",
+    "english_name": "Arabic",
+    "fallback": "en",
+    "direction": "rtl",
+    "ai_language_name": "Arabic",
+    "status": "planned",
+    "ui_enabled": false
+  },
+  {
+    "code": "hi",
+    "native_name": "हिन्दी",
+    "english_name": "Hindi",
+    "fallback": "en",
+    "direction": "ltr",
+    "ai_language_name": "Hindi",
+    "status": "planned",
+    "ui_enabled": false
+  },
+  {
+    "code": "ja",
+    "native_name": "日本語",
+    "english_name": "Japanese",
+    "fallback": "en",
+    "direction": "ltr",
+    "ai_language_name": "Japanese",
+    "status": "planned",
+    "ui_enabled": false
+  },
+  {
+    "code": "ko",
+    "native_name": "한국어",
+    "english_name": "Korean",
+    "fallback": "en",
+    "direction": "ltr",
+    "ai_language_name": "Korean",
+    "status": "planned",
+    "ui_enabled": false
+  }
+]

@@ -1,0 +1,11 @@
+streamlit
+requests
+pandas
+openpyxl
+pydeck
+pycountry
+python-dotenv
+numpy
+openai
+python-docx
+Pillow
