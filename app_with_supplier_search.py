@@ -1065,6 +1065,54 @@ def load_projects():
                 }
                 changed = True
 
+            # Migrate previously saved Daily Log analyses from the old
+            # piecewise 0-100 mapping back to the auditable S x L x E value.
+            # Other project scores (baseline/current/weather) are untouched.
+            analysis = log.get("ai_analysis")
+            if isinstance(analysis, dict):
+                saved_risks = analysis.get("risks", [])
+                if isinstance(saved_risks, list) and saved_risks:
+                    valid_risks = []
+                    for item in saved_risks:
+                        if not isinstance(item, dict):
+                            continue
+                        try:
+                            severity = max(1, min(5, int(item.get("severity", 1))))
+                            likelihood = max(1, min(5, int(item.get("likelihood", 1))))
+                            exposure = max(1, min(5, int(item.get("exposure", 1))))
+                        except (TypeError, ValueError):
+                            severity = likelihood = exposure = 1
+
+                        raw_risk = severity * likelihood * exposure
+                        level = (
+                            "HIGH" if raw_risk >= 60
+                            else "MEDIUM" if raw_risk >= 25
+                            else "LOW"
+                        )
+                        percentage_score = round(raw_risk / 125 * 100)
+                        item.update({
+                            "severity": severity,
+                            "likelihood": likelihood,
+                            "exposure": exposure,
+                            "raw_risk": raw_risk,
+                            "score": percentage_score,
+                            "level": level,
+                        })
+                        valid_risks.append(item)
+
+                    if valid_risks:
+                        overall = max(valid_risks, key=lambda item: item["raw_risk"])
+                        if (
+                            analysis.get("score") != overall["score"]
+                            or analysis.get("level") != overall["level"]
+                        ):
+                            analysis["score"] = overall["score"]
+                            analysis["level"] = overall["level"]
+                            analysis["risk_count"] = len(valid_risks)
+                            analysis["score_type"] = "Normalized SLE Score (0-100)"
+                            log["severity"] = overall["level"]
+                            changed = True
+
     if changed:
         save_projects(projects)
 
@@ -1597,35 +1645,20 @@ def clamp_risk_dimension(value, default=1):
     return max(1, min(5, value))
 
 
-def sle_raw_to_score(raw_risk):
-    """
-    Convert S × L × E raw risk (1-125)
-    into RiskPilot's 0-100 risk index.
-
-    Raw risk:
-        1-20   -> LOW    -> 10-44
-        21-50  -> MEDIUM -> 45-69
-        51-125 -> HIGH   -> 70-95
-
-    The score is a relative RiskPilot risk index,
-    NOT an accident probability.
-    """
-
+def sle_level_from_raw(raw_risk):
+    """Classify the original S x L x E value on its native 1-125 scale."""
     raw_risk = max(1, min(125, int(raw_risk)))
+    if raw_risk >= 60:
+        return "HIGH"
+    if raw_risk >= 25:
+        return "MEDIUM"
+    return "LOW"
 
-    # LOW
-    if raw_risk <= 20:
-        score = 10 + ((raw_risk - 1) / 19) * 34
 
-    # MEDIUM
-    elif raw_risk <= 50:
-        score = 45 + ((raw_risk - 21) / 29) * 24
-
-    # HIGH
-    else:
-        score = 70 + ((raw_risk - 51) / 74) * 25
-
-    return round(score)
+def sle_raw_to_percentage(raw_risk):
+    """Normalize S x L x E from its 1-125 scale to a 0-100 score."""
+    raw_risk = max(1, min(125, int(raw_risk)))
+    return round(raw_risk / 125 * 100)
 
 
 def calculate_sle_risk(severity, likelihood, exposure):
@@ -1647,15 +1680,13 @@ def calculate_sle_risk(severity, likelihood, exposure):
         * exposure
     )
 
-    score = sle_raw_to_score(raw_risk)
-
     return {
         "severity": severity,
         "likelihood": likelihood,
         "exposure": exposure,
         "raw_risk": raw_risk,
-        "score": score,
-        "level": level_from_score(score),
+        "score": sle_raw_to_percentage(raw_risk),
+        "level": sle_level_from_raw(raw_risk),
     }
 
 
@@ -2066,9 +2097,7 @@ Return only the structured result.
         # Python decides level.
         # ----------------------------------------------------
 
-        level = level_from_score(
-            score
-        )
+        level = most_critical["level"] if risks else "LOW"
 
         summary = str(
             result.get(
@@ -2118,7 +2147,7 @@ Return only the structured result.
                 "Risk = Severity × Likelihood × Exposure",
 
             "score_type":
-                "Relative Risk Index",
+                "Normalized SLE Score (0-100)",
 
             "source":
                 "AI Risk Extraction + Deterministic Scoring Engine",
@@ -2134,7 +2163,12 @@ Return only the structured result.
 
         if fallback_risks:
             score = max(item["score"] for item in fallback_risks)
-            level = level_from_score(score)
+            most_critical = max(
+                fallback_risks,
+                key=lambda item: item["raw_risk"],
+            )
+            score = most_critical["score"]
+            level = most_critical["level"]
             summary = (
                 "AI analysis was unavailable; explicit site hazards were "
                 "classified by the deterministic safety fallback."
@@ -2161,7 +2195,7 @@ Return only the structured result.
                 "Risk = Severity × Likelihood × Exposure",
 
             "score_type":
-                "Relative Risk Index",
+                "Normalized SLE Score (0-100)",
 
             "source":
                 "Fallback",
@@ -7370,7 +7404,7 @@ def project_dashboard_page():
 
                                 d.metric(
                                     t("dashboard.metric_risk_index"),
-                                    f'{item.get("score",10)}/100'
+                                    f'{item.get("score", 1)}/100'
                                 )
 
 
@@ -7382,6 +7416,12 @@ def project_dashboard_page():
                                         exposure=item.get("exposure", 1),
                                         raw=item.get("raw_risk", 1),
                                     )
+                                )
+
+                                st.caption(
+                                    "Percentage score = "
+                                    f'{item.get("raw_risk", 1)} ÷ 125 × 100 '
+                                    f'= {item.get("score", 1)}/100'
                                 )
 
 
