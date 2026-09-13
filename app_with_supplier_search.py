@@ -1859,6 +1859,28 @@ def build_daily_log_safety_fallback(title, description):
             5, 4, 4,
         )
 
+    # Supply/material delivery delays are operational risks even when the
+    # log correctly states that there is no direct safety hazard.
+    supply_delay = contains_any([
+        "供应商", "运输延误", "到货延误", "推迟送达", "材料延误",
+        "supplier", "delivery delay", "delayed delivery", "late delivery",
+        "shipment delay", "material delay",
+    ])
+    schedule_impact = contains_any([
+        "无法按原计划", "进度延误", "工期延误", "推迟", "停工", "无法施工",
+        "cannot proceed", "unable to proceed", "schedule delay", "delayed",
+    ])
+    if supply_delay and schedule_impact:
+        add(
+            "供应商运输延误导致施工进度受阻",
+            "Supplier delivery delay affecting construction progress",
+            "日志明确记录材料未按计划到场，相关班组无法按原计划施工。",
+            "The log states that materials did not arrive as planned and the affected crew could not proceed.",
+            "跟进供应商最新到货时间，调整短期施工计划，并评估替代供应或运输方案。",
+            "Confirm the revised delivery time, resequence short-term work, and assess alternative supply or transport options.",
+            2, 4, 3,
+        )
+
     if not items and contains_any([
         "立即停止", "停止作业", "人员撤离", "危险", "事故", "故障",
         "stop work", "evacuate", "hazard", "unsafe", "accident", "failure",
@@ -2091,7 +2113,7 @@ Return only the structured result.
         else:
 
             # Normal construction day.
-            score = 10
+            score = 0
 
         # ----------------------------------------------------
         # Python decides level.
@@ -2174,7 +2196,7 @@ Return only the structured result.
                 "classified by the deterministic safety fallback."
             )
         else:
-            score = 10
+            score = 0
             level = "LOW"
             summary = (
                 "AI analysis was temporarily unavailable. "
@@ -7066,6 +7088,30 @@ def project_dashboard_page():
         else:
             for log in reversed(logs):
                 analysis = log.get("ai_analysis", {})
+
+                # Repair an earlier empty AI result at display time when the
+                # original log contains an explicit deterministic hazard.
+                # This also fixes already-saved logs without requiring the
+                # user to delete and upload them again.
+                if isinstance(analysis, dict) and not analysis.get("risks"):
+                    recovered_risks = build_daily_log_safety_fallback(
+                        log.get("title", ""),
+                        log.get("description", ""),
+                    )
+                    if recovered_risks:
+                        most_critical = max(
+                            recovered_risks,
+                            key=lambda item: item["raw_risk"],
+                        )
+                        analysis.update({
+                            "risks": recovered_risks,
+                            "risk_count": len(recovered_risks),
+                            "score": most_critical["score"],
+                            "level": most_critical["level"],
+                            "score_type": "Normalized SLE Score (0-100)",
+                            "source": "Deterministic Safety Fallback",
+                        })
+                        log["severity"] = most_critical["level"]
 
                 ui_locale = get_current_language()
 
