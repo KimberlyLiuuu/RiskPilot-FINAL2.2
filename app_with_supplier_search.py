@@ -14,6 +14,7 @@ import pycountry
 import pydeck as pdk
 import requests
 import math
+import time
 import streamlit as st
 import streamlit.components.v1 as components
 
@@ -1859,6 +1860,43 @@ def build_daily_log_safety_fallback(title, description):
             5, 4, 4,
         )
 
+    electrical_overheat = contains_any([
+        "电缆过热", "电线过热", "绝缘破损", "电缆冒烟", "电线冒烟",
+        "overheated cable", "cable overheating", "damaged insulation",
+        "smoking cable", "electrical smoke",
+    ])
+    fire_conditions = contains_any([
+        "烟雾", "冒烟", "可燃物", "木质包装", "起火", "火灾",
+        "smoke", "combustible", "flammable", "fire",
+    ])
+    if electrical_overheat and fire_conditions:
+        add(
+            "临时电缆过热引发火灾风险",
+            "Fire risk from an overheated temporary cable",
+            "日志记录临时电缆过热或绝缘受损，且附近存在烟雾或可燃材料。",
+            "The log reports an overheated or damaged temporary cable near smoke or combustible materials.",
+            "立即隔离并断开受影响电路，更换损坏电缆，清理周边可燃材料，经用电安全复查后再复工。",
+            "Isolate the circuit, replace the damaged cable, remove nearby combustible material, and complete an electrical safety check before work resumes.",
+            5, 4, 4,
+        )
+
+    severe_rain = contains_any([
+        "暴雨", "强降雨", "特大暴雨", "heavy rain", "torrential rain",
+    ])
+    casualty_signal = contains_any([
+        "人员伤亡", "人员受伤", "伤亡", "受伤", "injury", "casualty",
+    ])
+    if severe_rain and casualty_signal:
+        add(
+            "强降雨造成重大人员安全风险",
+            "Major personnel safety risk caused by severe rainfall",
+            "日志明确记录强降雨已经造成严重人员安全后果。",
+            "The log explicitly reports a serious personnel safety consequence during severe rainfall.",
+            "立即停止受影响区域作业并启动应急响应，完成现场排查和安全确认后再决定复工。",
+            "Stop work in the affected area, activate the emergency response, and complete a site safety review before resuming.",
+            5, 5, 4,
+        )
+
     # Supply/material delivery delays are operational risks even when the
     # log correctly states that there is no direct safety hazard.
     supply_delay = contains_any([
@@ -2073,12 +2111,29 @@ Return only the structured result.
 
         from agents.risk_agent import RiskAgent
 
-        result = RiskAgent().analyze(prompt)
+        # One brief retry handles transient provider/network failures without
+        # asking the user to submit the same log repeatedly.
+        result = None
+        last_error = None
+        for attempt in range(2):
+            try:
+                result = RiskAgent().analyze(prompt)
+                if not isinstance(result, dict):
+                    raise ValueError("Daily Log AI returned invalid data.")
+                break
+            except Exception as attempt_error:
+                last_error = attempt_error
+                print(
+                    "DAILY LOG AI ERROR "
+                    f"(attempt {attempt + 1}/2): "
+                    f"{type(attempt_error).__name__}: {attempt_error}"
+                )
+                if attempt == 0:
+                    time.sleep(1.5)
 
         if not isinstance(result, dict):
-            raise ValueError(
-                "Daily Log AI returned invalid data."
-            )
+            raise last_error or ValueError("Daily Log AI returned invalid data.")
+
 
         # ----------------------------------------------------
         # Normalize AI-extracted risks
