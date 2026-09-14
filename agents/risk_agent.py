@@ -9,14 +9,14 @@ load_dotenv()
 
 
 def _client():
-    """Build the client lazily so a reboot picks up the latest secret."""
+    """Create a client without automatic retries."""
     api_key = os.getenv("DEEPSEEK_API_KEY")
     if not api_key:
         raise RuntimeError("DEEPSEEK_API_KEY is not configured")
-
     return OpenAI(
         api_key=api_key,
         base_url="https://api.deepseek.com",
+        max_retries=0,
     )
 
 

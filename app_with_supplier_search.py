@@ -1349,7 +1349,7 @@ RULES:
 
         agent = RiskAgent()
 
-        result = agent.analyze(prompt)
+        result = agent.analyze(prompt, timeout=45)
 
         if not isinstance(result, dict):
             raise ValueError(
